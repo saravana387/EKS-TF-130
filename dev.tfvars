@@ -37,32 +37,30 @@ launch_template_managed_xlarge_tags_network  = { Name = "eks-node-xlarge-01", al
 
 nodegroup_configs = [
   {
-    name          = "EKS_NG_large_01"
-    instance_type = "t3.large"
-    min_size      = 1
-    max_size      = 5
-    desired_size  = 2
-    ami_type      = "AL2_x86_64"
-    #node_role_arn           = "arn:aws:iam::833792052071:role/old-nodegroup-role"
-    subnets       = ["subnet-0f7e874cfab39f625", "subnet-0596c75429752806f", "subnet-0f92250439bb6f0a5"]
-    capacity_type = "ON_DEMAND"
+    name                    = "EKS_NG_large_01"
+    instance_type           = "t3.large"
+    min_size                = 1
+    max_size                = 5
+    desired_size            = 2
+    ami_type                = "AL2_x86_64"
+    subnets                 = ["subnet-0f7e874cfab39f625", "subnet-0596c75429752806f", "subnet-0f92250439bb6f0a5"]
+    capacity_type           = "ON_DEMAND"
     launch_template_version = "1"
-    labels = { "nodegroup-role" = "worker", "deployment-tag" = "3.0.0" }
-    tags   = { "Environment" = "staging-1.30" }
+    labels                  = { "nodegroup-role" = "worker", "deployment-tag" = "3.0.0" }
+    tags                    = { "Environment" = "staging-1.30" }
   },
   {
-    name          = "EKS_NG_xlarge_01"
-    instance_type = "t3.xlarge"
-    min_size      = 1
-    max_size      = 5
-    desired_size  = 2
-    ami_type      = "AL2_x86_64"
-    #node_role_arn           = "arn:aws:iam::833792052071:role/new-nodegroup-role"
-    subnets       = ["subnet-0f7e874cfab39f625", "subnet-0596c75429752806f", "subnet-0f92250439bb6f0a5"]
-    capacity_type = "ON_DEMAND"
+    name                    = "EKS_NG_xlarge_01"
+    instance_type           = "t3.xlarge"
+    min_size                = 1
+    max_size                = 5
+    desired_size            = 2
+    ami_type                = "AL2_x86_64"
+    subnets                 = ["subnet-0f7e874cfab39f625", "subnet-0596c75429752806f", "subnet-0f92250439bb6f0a5"]
+    capacity_type           = "ON_DEMAND"
     launch_template_version = "1"
-    labels = { "nodegroup-role" = "worker", "deployment-tag" = "3.0.0" }
-    tags   = { "Environment" = "staging-1.30" }
+    labels                  = { "nodegroup-role" = "worker", "deployment-tag" = "3.0.0" }
+    tags                    = { "Environment" = "staging-1.30" }
   }
 ]
 

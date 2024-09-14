@@ -65,6 +65,7 @@ resource "aws_eks_node_group" "new_eks_node_group" {
   subnet_ids      = each.value.subnets
   ami_type        = each.value.ami_type
   capacity_type   = each.value.capacity_type
+  instance_types  = [each.value.instance_type]
 
   scaling_config {
     desired_size = each.value.desired_size
